@@ -1,0 +1,34 @@
+{
+  "name": "@hayrat/hesabim-sdk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hayrat Hesabım browser SDK workspace (core + Vue adapter).",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/core",
+    "packages/vue"
+  ],
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces",
+    "test": "npm run test --workspaces",
+    "build": "npm run build --workspace @hayrat/hesabim-core && npm run build --workspace @hayrat/hesabim-vue",
+    "clean": "rm -rf packages/core/dist packages/vue/dist"
+  },
+  "devDependencies": {
+    "happy-dom": "^20.11.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "vitest": "^4.1.10"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hayrat/hesabim-sdk-js.git"
+  }
+}

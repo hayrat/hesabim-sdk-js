@@ -1,0 +1,61 @@
+{
+  "name": "@hayrat/hesabim-core",
+  "version": "0.1.0",
+  "description": "Hayrat Hesabım OIDC browser client — framework agnostic core with zero runtime dependencies.",
+  "keywords": [
+    "hayrat",
+    "hesabim",
+    "oidc",
+    "openid-connect",
+    "oauth2",
+    "pkce",
+    "auth",
+    "sso"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "author": "Hayrat",
+  "homepage": "https://github.com/hayrat/hesabim-sdk-js/tree/main/packages/core#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hayrat/hesabim-sdk-js.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/hayrat/hesabim-sdk-js/issues"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

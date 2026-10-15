@@ -1,0 +1,72 @@
+{
+  "name": "@hayrat/hesabim-vue",
+  "version": "0.1.0",
+  "description": "Vue 3 adapter for the Hayrat Hesabım browser SDK.",
+  "keywords": [
+    "hayrat",
+    "hesabim",
+    "oidc",
+    "openid-connect",
+    "oauth2",
+    "pkce",
+    "auth",
+    "sso",
+    "vue",
+    "vue3"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "author": "Hayrat",
+  "homepage": "https://github.com/hayrat/hesabim-sdk-js/tree/main/packages/vue#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hayrat/hesabim-sdk-js.git",
+    "directory": "packages/vue"
+  },
+  "bugs": {
+    "url": "https://github.com/hayrat/hesabim-sdk-js/issues"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@hayrat/hesabim-core": "^0.1.0"
+  },
+  "peerDependencies": {
+    "vue": "^3"
+  },
+  "devDependencies": {
+    "vue": "^3.5.13"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
