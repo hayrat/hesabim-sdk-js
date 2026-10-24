@@ -758,9 +758,15 @@ ile verilir.
 
 **Kapsam sözlüğü:** `region` (bölge) · `province` (il) · `district` (ilçe) ·
 `school` (okul). Ülke seviyesi yoktur — "her yer" demek **kapsamsız rol**
-demektir. Kapsam `id`'leri Hesabım'ın referans verisinin sayısal kimlikleridir;
-uygulamanın kendi yer kimlikleriyle eşlemesi gerekiyorsa eşleme listesini
-Hesabım yöneticisinden iste.
+demektir. Kapsam `id`'leri Hesabım'ın referans verisinin sayısal kimlikleridir.
+Yerlerde köprü **guid**'dir: Hesabım yer kaydının sahibidir ve guid'ler eski yer
+servisinin (yer.hayrat.dev) guid'leriyle aynıdır. id↔guid listesini Hesabım
+yöneticisinden iste.
+
+Türkiye'nin 81 ili ve İçişleri Bakanlığı listesindeki 973 ilçenin hepsi vardır.
+Vakfın kendi ilçeleri de (büyükşehirde "Merkez", ilçe gibi yürütülen belde/köy)
+geçerli kapsam hedefidir; Hesabım bunları `is_official: false` olarak işaretler.
+`can()` bu ayrımı umursamaz — yalnız `(type, id)` karşılaştırır.
 
 **Hiyerarşi (il → ilçe):** eşleşme `(type, id)` üzerinde birebirdir; SDK "il,
 ilçelerini kapsar" bilgisini bilmez. Gerekiyorsa çözücü ver — yalnız birebir
